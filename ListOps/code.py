@@ -11,12 +11,12 @@ Example: given list -> [1,2,3,4,5]
 
 nums = [3, 5, 2, 9, 101, 333, 4]
 
-def remove_odd_element(input_list):
+def remove_odd_element(nums):
     i=0
-    for element in input_list:
+    for element in nums:
         if i % 2 == 0:
             pass
         else:
-            input_list.remove(element)
+            nums.remove(element)
         i = i + 1
 
