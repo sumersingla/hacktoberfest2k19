@@ -2,7 +2,8 @@
 #include<iostream.h
 #include<stdio.h>
 
-
+int incr(int x);
+int decr(int x;)
 int main()
 {
     int num,ch;
@@ -20,6 +21,7 @@ int main()
         case 1: {
             int res;
             res=incr(num);
+            res=incr(res);
             printf("the incremented number is %d\n",res);
             break;
         }
