@@ -2,6 +2,8 @@
 #include<iostream.h
 #include<stdio.h>
 
+int incr(int x);
+int decr(int x);
 
 int main()
 {
@@ -45,13 +47,11 @@ int main()
 
 int incr(int x)
 {
-     x=x+1;
-     return x;
+     return ++x;
 }
 int decr(int x)
 {
-    x=x-1;
-    return x;
+    return --x;
 }
 
 
