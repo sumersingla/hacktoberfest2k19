@@ -10,6 +10,7 @@ int searchint(int x);
 int compare_fn(int a,int b)
 {
     //Write the compare function for the variables 'a' and 'b' and return the value
+	return (a>b)?1:0;
 }
 
 int compare_no=1;
@@ -22,6 +23,10 @@ struct node
 };
 
 //A missing line here which initialises the top condition.
+struct node *top=(struct node*)malloc(struct node);
+top->data=NULL;
+top->prev=NULL;
+top->next=NULL;
 
 int main()
 {
@@ -72,6 +77,7 @@ int insertdata(int x)
     if(top==NULL)
     {
         //Write a code for this particular condition where TOP == NULL
+	    top->data=x;
     }
     else if(compare_fn(top->data ,x)==compare_no)
     {
@@ -93,6 +99,7 @@ int insertdata(int x)
 	    node *b=insertele->next;
 	    node *N =insertele;
 	    //Write 3 lines of code which links all the nodes in the linked list while inserting the data into the list.
+	    
 	    if(b!=NULL)
 		b->prev=n;
     }
@@ -104,8 +111,8 @@ void display()
 	while(disp!=NULL)
 	{
 	    cout<<" "<<disp->data;
-	    if(_______)//write the particular condition for which the while condition needs to end
-	    {
+	    if(disp->next==NULL)//write the particular condition for which the while condition needs to end
+	    {    
 		break;
 	    }
 	    disp=disp->next;
@@ -117,7 +124,7 @@ void deleteint(int x)
     node *del=top;
     if(del->data == x)
     {
-        if(_______)// Write the condition for which TOP should be NULL while deleting a particular node in a doubly linked list.
+        if(del->next==NULL)// Write the condition for which TOP should be NULL while deleting a particular node in a doubly linked list.
         {
             top=NULL;
             return;
@@ -155,7 +162,8 @@ void deleteint(int x)
         }
         del->next=delsuc->next;
         if(delsuc->next!=NULL)
-      		//Write the step for which a doubly linked list needs to be connected after deleting an element from the list.			
+      		//Write the step for which a doubly linked list needs to be connected after deleting an element from the list.
+		delsuc->prev->next=delsuc->next;
     }
 }
 
